@@ -1,17 +1,20 @@
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
+import java.sql.Timestamp;
+import java.util.Date;
+
 public class Main {
     public static void main(String[] args) {
-        // Press Alt+Enter with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
         System.out.print("Hello and welcome!");
 
-        // Press Shift+F10 or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
+        // Criando uma instância de Timestamp a partir de um objeto Date
+        Date date = new Date();
+        Timestamp timestamp1 = new Timestamp(date.getTime());
 
-            // Press Shift+F9 to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Ctrl+F8.
-            System.out.println("i = " + i);
-        }
+        // Criando uma instância de Timestamp diretamente a partir de um valor de tempo em milissegundos
+        long timeInMillis = System.currentTimeMillis();
+        Timestamp timestamp2 = new Timestamp(timeInMillis);
+
+        System.out.println(timestamp1);
+        System.out.println(timestamp2);
+
     }
 }
