@@ -3,6 +3,7 @@ package Model;
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class Conta {
     private int id;
@@ -88,5 +89,11 @@ public class Conta {
     /*========================= Funções =========================*/
     /*===========================================================*/
 
+    public ItemVenda criarItemVenda(Produto produto, int quantidade){
+        Date date = new Date();
+        Timestamp timestamp = new Timestamp(date.getTime());
+
+        return new ItemVenda(timestamp, produto.getNome(), quantidade, 0.0f, produto.getValor());
+    }
 
 }

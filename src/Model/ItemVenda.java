@@ -1,14 +1,17 @@
 package Model;
-import java.security.Timestamp;
+import java.sql.Timestamp;
 
 public class ItemVenda {
     private Timestamp id;
     private String nome;
     private int quantidade;
-    private int valorPago;
-    private int valor;
+    private float valorPago;
+    private float valor;
 
-    public ItemVenda(Timestamp id, String nome, int quantidade, int valorPago, int valor) {
+    public ItemVenda() {
+    }
+
+    public ItemVenda(Timestamp id, String nome, int quantidade, float valorPago, float valor) {
         this.id = id;
         this.nome = nome;
         this.quantidade = quantidade;
@@ -44,7 +47,7 @@ public class ItemVenda {
         this.quantidade = quantidade;
     }
 
-    public int getValorPago() {
+    public float getValorPago() {
         return valorPago;
     }
 
@@ -52,7 +55,7 @@ public class ItemVenda {
         this.valorPago = valorPago;
     }
 
-    public int getValor() {
+    public float getValor() {
         return valor;
     }
 
