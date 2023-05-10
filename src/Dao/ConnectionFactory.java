@@ -9,10 +9,9 @@ public class ConnectionFactory implements AutoCloseable {
     public static Connection createConnection() {
         try {
             if (conn == null){
-                Class.forName("org.sqlite.JDBC");
-                conn = DriverManager.getConnection("jdbc:sqlite:dados.db");
+                conn = DriverManager.getConnection("jdbc:sqlite:bartoco.db");
             }
-        } catch (SQLException | ClassNotFoundException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
             System.out.println(e);
         }
