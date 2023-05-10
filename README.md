@@ -1,6 +1,6 @@
 # Bar do Toco
 
-trabalho feito por 
+Trabalho feito por 
 Alexandre
 Tony
 Maria
