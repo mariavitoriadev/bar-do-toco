@@ -2,6 +2,6 @@ package Model;
 
 public class Caixa {
 
-    private Status status;
+    private Status status; 
 
 }
