@@ -1,6 +1,5 @@
 package Model;
 import java.security.Timestamp;
-import java.util.*;
 
 public class ItemVenda {
     private Timestamp id;
