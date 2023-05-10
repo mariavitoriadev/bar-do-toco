@@ -7,7 +7,7 @@ public class Caixa {
 
     private Caixa(){}
 
-    private synchronized static Caixa getInstance(){
+    public synchronized static Caixa getInstance(){
         if(INSTANCE == null) INSTANCE = new Caixa();
         return INSTANCE;
     }
