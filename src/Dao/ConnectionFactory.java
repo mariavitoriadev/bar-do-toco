@@ -9,6 +9,7 @@ public class ConnectionFactory implements AutoCloseable {
     public static Connection createConnection() {
         try {
             if (conn == null){
+                // confirmar o banco de dados a ser utilizado
                 conn = DriverManager.getConnection("jdbc:sqlite:bartoco.db");
             }
         } catch (SQLException e) {
