@@ -6,7 +6,7 @@ import java.sql.*;
 public class ProdutoSQLiteDAO implements ProdutoDAO{
 
     @Override
-    public void criarTabela() {
+    public void criarTabela() throws ClassNotFoundException {
 
         String sql = "CREATE TABLE IF NOT EXISTS produto (" +
                 "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
@@ -22,7 +22,7 @@ public class ProdutoSQLiteDAO implements ProdutoDAO{
 
     }
     @Override
-    public void salvar(Produto produto) {
+    public void salvar(Produto produto) throws ClassNotFoundException {
         String sql = "INSERT INTO produto values (?,?,?)";
 
         try(
@@ -37,7 +37,7 @@ public class ProdutoSQLiteDAO implements ProdutoDAO{
     };
 
     @Override
-    public void atualizar(Produto produto) {
+    public void atualizar(Produto produto) throws ClassNotFoundException {
         String sql = "UPDATE produto SET name=?, valor=? WHERE id=?";
 
         try(
@@ -52,7 +52,7 @@ public class ProdutoSQLiteDAO implements ProdutoDAO{
     };
 
     @Override
-    public void apagar(Produto produto) {
+    public void apagar(Produto produto) throws ClassNotFoundException {
         String sql = "DELETE FROM produto WHERE id=?";
 
         try(

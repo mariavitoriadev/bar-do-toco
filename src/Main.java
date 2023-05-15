@@ -1,9 +1,14 @@
+import Dao.ContaDao;
+import Dao.ContaSqliteDao;
+import Model.Conta;
+
 import java.sql.Timestamp;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.print("Hello and welcome!");
+        System.out.println("Hello and welcome!");
 
         // Criando uma instância de Timestamp a partir de um objeto Date
         Date date = new Date();
@@ -15,6 +20,11 @@ public class Main {
 
         System.out.println(timestamp1);
         System.out.println(timestamp2);
+
+        Conta conta = new Conta(1, LocalDateTime.now(), java.time.LocalDateTime.now(), 2, 2, 2);
+        ContaDao dao = new ContaSqliteDao();
+
+        dao.salvar(conta);
 
     }
 }

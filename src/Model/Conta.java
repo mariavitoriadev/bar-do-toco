@@ -24,6 +24,15 @@ public class Conta {
         this.valorPagamento = valorPagamento;
     }
 
+    public Conta(int id, LocalDateTime horarioAbertura, LocalDateTime horarioFechamento, int valorTotal, int valorPago, int valorPagamento) {
+        this.id = id;
+        this.horarioAbertura = horarioAbertura;
+        this.horarioFechamento = horarioFechamento;
+        this.valorTotal = valorTotal;
+        this.valorPago = valorPago;
+        this.valorPagamento = valorPagamento;
+    }
+
     /*============================================================*/
     /*====================== Gets & Setters ======================*/
     /*============================================================*/
@@ -93,7 +102,7 @@ public class Conta {
         Date date = new Date();
         Timestamp timestamp = new Timestamp(date.getTime());
 
-        return new ItemVenda(timestamp, produto.getNome(), quantidade, 0.0f, produto.getValor());
+        return new ItemVenda(timestamp, produto.getNome(), quantidade, 0.0f, (float)produto.getValor());
     }
 
 }

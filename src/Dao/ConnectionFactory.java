@@ -6,10 +6,11 @@ public class ConnectionFactory implements AutoCloseable {
     private static PreparedStatement stmt = null;
     private static Connection conn = null; 
     
-    public static Connection createConnection() {
+    public static Connection createConnection() throws ClassNotFoundException {
         try {
             if (conn == null){
                 // confirmar o banco de dados a ser utilizado
+                Class.forName("org.sqlite.JDBC");
                 conn = DriverManager.getConnection("jdbc:sqlite:bartoco.db");
             }
         } catch (SQLException e) {
@@ -19,7 +20,7 @@ public class ConnectionFactory implements AutoCloseable {
         return conn;
     }
 
-    public static PreparedStatement createStatement(String sql) {
+    public static PreparedStatement createStatement(String sql) throws ClassNotFoundException {
         try {
             stmt = createConnection().prepareStatement(sql);
         } catch (SQLException e) {
