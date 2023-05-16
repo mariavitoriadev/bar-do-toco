@@ -13,6 +13,12 @@ public class Conta {
     private int valorPago;
     private ArrayList<Timestamp> listaItensPagamento;
     private int valorPagamento;
+    private Mesa mesa;
+
+    public Conta(int id, LocalDateTime horarioAbertura) {
+        this.id = id;
+        this.horarioAbertura = horarioAbertura;
+    }
 
     public Conta(int id, LocalDateTime horarioAbertura, LocalDateTime horarioFechamento, int valorTotal, int valorPago, ArrayList<Timestamp> listaItensPagamento, int valorPagamento) {
         this.id = id;
@@ -56,6 +62,8 @@ public class Conta {
         return valorPagamento;
     }
 
+    public Mesa getMesa() { return mesa; }
+
     public void setId(int id) {
         this.id = id;
     }
@@ -84,16 +92,12 @@ public class Conta {
         this.valorPagamento = valorPagamento;
     }
 
+    public void setMesa(Mesa mesa) { this.mesa = mesa;}
 
     /*===========================================================*/
     /*========================= Funções =========================*/
     /*===========================================================*/
 
-    public ItemVenda criarItemVenda(Produto produto, int quantidade){
-        Date date = new Date();
-        Timestamp timestamp = new Timestamp(date.getTime());
 
-        return new ItemVenda(timestamp, produto.getNome(), quantidade, 0.0f, produto.getValor());
-    }
 
 }
