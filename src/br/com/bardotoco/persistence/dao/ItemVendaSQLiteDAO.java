@@ -7,34 +7,12 @@ import br.com.bardotoco.model.entities.ItemVenda;
 import br.com.bardotoco.persistence.utils.ConnectionFactory;
 
 public class ItemVendaSQLiteDAO implements ItemVendaDAO {
-    @Override
-    public void criarTabela() {
-
-        String sql = "CREATE TABLE IF NOT EXISTS ItemVenda (" +
-                "id TEXT PRIMARY KEY, " +
-                "nome TEXT NOT NULL, " +
-                "quantidade INTEGER NOT NULL, " +
-                "valorPago REAL, " +
-                "valorTotal REAL, " +
-                "conta INTEGER NOT NULL, " +
-                "produto INTEGER NOT NULL, " +
-                "FOREIGN KEY(produto) REFERENCES produto(id), " +
-                "FOREIGN KEY(conta) REFERENCES conta(id) )";
-
-        try{
-            PreparedStatement stmt = ConnectionFactory.createStatement(sql);
-            stmt.executeUpdate();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-
-    }
-    @Override
+        @Override
     public void salvar(ItemVenda itemVenda) {
         String sql = "INSERT INTO ItemVenda values (?,?,?,?,?,?,?)";
 
         try(
-            PreparedStatement stmt = ConnectionFactory.createStatement(sql)){
+            PreparedStatement stmt = ConnectionFactory.createPreparedStatement(sql)){
             stmt.setString(1,itemVenda.getId().toString());
             stmt.setString(2,itemVenda.getNome());
             stmt.setInt(3,itemVenda.getQuantidade());
@@ -53,7 +31,7 @@ public class ItemVendaSQLiteDAO implements ItemVendaDAO {
         String sql = "UPDATE ItemVenda SET nome=?, quantidade=?, valorPago=?, valorTotal=?, conta=?, produto=? WHERE id=?";
 
         try(
-            PreparedStatement stmt = ConnectionFactory.createStatement(sql)){
+            PreparedStatement stmt = ConnectionFactory.createPreparedStatement(sql)){
             stmt.setString(1,itemVenda.getNome());
             stmt.setInt(2,itemVenda.getQuantidade());
             stmt.setDouble(3,itemVenda.getValorPago());
@@ -72,7 +50,7 @@ public class ItemVendaSQLiteDAO implements ItemVendaDAO {
         String sql = "DELETE FROM ItemVenda WHERE id=?";
 
         try(
-            PreparedStatement stmt = ConnectionFactory.createStatement(sql)){
+            PreparedStatement stmt = ConnectionFactory.createPreparedStatement(sql)){
             stmt.setString(1,itemVenda.getId().toString());
             stmt.executeUpdate();
         }catch (SQLException e) {

@@ -32,7 +32,7 @@ public class ConnectionFactory implements AutoCloseable {
         return connection;
     }
 
-    public static PreparedStatement createStatement(String sql) {
+    public static PreparedStatement createPreparedStatement(String sql) {
         try {
             preparedStatement = createConnection().prepareStatement(sql);
         } catch (SQLException e) {

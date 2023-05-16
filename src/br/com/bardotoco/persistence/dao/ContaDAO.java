@@ -4,7 +4,6 @@ import br.com.bardotoco.model.entities.Conta;
 
 public interface ContaDAO {
 
-        void criarTabela();
         void salvar(Conta conta);
         void atualizar (Conta conta);
         void apagar (Conta conta);
