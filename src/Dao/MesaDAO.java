@@ -1,7 +1,6 @@
 package Dao;
 
 import Model.Mesa;
-import java.util.List;
 
 public interface MesaDAO {
 

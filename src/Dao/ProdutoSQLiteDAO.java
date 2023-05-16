@@ -1,7 +1,9 @@
 package Dao;
 
 import Model.Produto;
-import java.sql.*;
+
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 
 public class ProdutoSQLiteDAO implements ProdutoDAO{
 

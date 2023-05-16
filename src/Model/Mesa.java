@@ -1,7 +1,5 @@
 package Model;
 
-import java.util.*;
-
 public class Mesa {
     private int codigo;
     private Conta conta;

@@ -3,7 +3,6 @@ package Model;
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.Date;
 
 public class Conta {
     private int id;
@@ -15,9 +14,9 @@ public class Conta {
     private int valorPagamento;
     private Mesa mesa;
 
-    public Conta(int id, LocalDateTime horarioAbertura) {
-        this.id = id;
+    public Conta( LocalDateTime horarioAbertura, Mesa mesa) {
         this.horarioAbertura = horarioAbertura;
+        this.mesa = mesa;
     }
 
     public Conta(int id, LocalDateTime horarioAbertura, LocalDateTime horarioFechamento, int valorTotal, int valorPago, ArrayList<Timestamp> listaItensPagamento, int valorPagamento) {
