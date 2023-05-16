@@ -1,6 +1,6 @@
-package Dao;
+package br.com.bardotoco.persistence.dao;
 
-import Model.Mesa;
+import br.com.bardotoco.model.entities.Mesa;
 
 public interface MesaDAO {
 

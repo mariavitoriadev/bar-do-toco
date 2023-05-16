@@ -1,7 +1,9 @@
-package Dao;
+package br.com.bardotoco.persistence.dao;
 
-import Model.Mesa;
 import java.sql.*;
+
+import br.com.bardotoco.model.entities.Mesa;
+import br.com.bardotoco.persistence.utils.ConnectionFactory;
 
 public class MesaSQLiteDAO implements MesaDAO {
 

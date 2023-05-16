@@ -1,7 +1,6 @@
-package Dao;
+package br.com.bardotoco.persistence.dao;
 
-import Model.Produto;
-import java.util.List;
+import br.com.bardotoco.model.entities.Produto;
 
 public interface ProdutoDAO {
 

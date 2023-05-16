@@ -1,9 +1,10 @@
-package Dao;
-
-import Model.Conta;
+package br.com.bardotoco.persistence.dao;
 
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+
+import br.com.bardotoco.model.entities.Conta;
+import br.com.bardotoco.persistence.utils.ConnectionFactory;
 
 public class ContaSQLiteDAO implements ContaDAO {
     @Override

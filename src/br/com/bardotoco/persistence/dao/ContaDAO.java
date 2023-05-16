@@ -1,6 +1,6 @@
-package Dao;
+package br.com.bardotoco.persistence.dao;
 
-import Model.Conta;
+import br.com.bardotoco.model.entities.Conta;
 
 public interface ContaDAO {
 

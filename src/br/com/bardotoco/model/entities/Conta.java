@@ -1,4 +1,4 @@
-package Model;
+package br.com.bardotoco.model.entities;
 
 import java.sql.Timestamp;
 import java.time.LocalDateTime;

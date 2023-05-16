@@ -1,6 +1,6 @@
-package Dao;
+package br.com.bardotoco.persistence.dao;
 
-import Model.ItemVenda;
+import br.com.bardotoco.model.entities.ItemVenda;
 
 public interface ItemVendaDAO {
 

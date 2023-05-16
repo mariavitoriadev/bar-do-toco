@@ -1,4 +1,4 @@
-package Model;
+package br.com.bardotoco.model.entities;
 
 public class Produto {
     private int id;
