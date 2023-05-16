@@ -31,7 +31,7 @@ public class ProdutoSQLiteDAO implements ProdutoDAO{
             PreparedStatement stmt = ConnectionFactory.createStatement(sql)){
             stmt.setInt(1,produto.getId());
             stmt.setString(2,produto.getNome());
-            stmt.setDouble(3,produto.getValor());
+            stmt.setFloat(3,produto.getValor());
             stmt.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -45,7 +45,7 @@ public class ProdutoSQLiteDAO implements ProdutoDAO{
         try(
             PreparedStatement stmt = ConnectionFactory.createStatement(sql)){
             stmt.setString(1,produto.getNome());
-            stmt.setDouble(2,produto.getValor());
+            stmt.setFloat(2,produto.getValor());
             stmt.setInt(3,produto.getId());
             stmt.executeUpdate();
         }catch (SQLException e) {

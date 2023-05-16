@@ -3,16 +3,16 @@ package Model;
 public class Produto {
     private int id;
     private String nome;
-    private double valor;
+    private float valor;
 
-    public void editarProduto(int id, String nome, double valor){
+    public void editarProduto(int id, String nome, float valor){
         this.id = id;
         this.nome = nome;
         this.valor = valor;
 
     }
 
-    public Produto(int id, String nome, double valor) {
+    public Produto(int id, String nome, float valor) {
         this.id = id;
         this.nome = nome;
         this.valor = valor;
@@ -34,7 +34,7 @@ public class Produto {
         this.nome = nome;
     }
 
-    public double getValor() {
+    public float getValor() {
         return valor;
     }
 
