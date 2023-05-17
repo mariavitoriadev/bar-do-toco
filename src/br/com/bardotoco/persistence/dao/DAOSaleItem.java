@@ -5,10 +5,10 @@ import java.sql.SQLException;
 import java.sql.ResultSet;
 import java.sql.Timestamp;
 
-import br.com.bardotoco.model.entities.ItemVenda;
+import br.com.bardotoco.model.entities.SaleItem;
 import br.com.bardotoco.persistence.utils.AbstractTemplateSqlDAO;
 
-public class DAOSaleItem extends AbstractTemplateSqlDAO<ItemVenda, Timestamp>{
+public class DAOSaleItem extends AbstractTemplateSqlDAO<SaleItem, Timestamp>{
 
     @Override
     protected String createSaveSql() {
@@ -43,14 +43,14 @@ public class DAOSaleItem extends AbstractTemplateSqlDAO<ItemVenda, Timestamp>{
     }
 
     @Override
-    protected void setEntityToPreparedStatement(ItemVenda entity, PreparedStatement stmt) throws SQLException {
+    protected void setEntityToPreparedStatement(SaleItem entity, PreparedStatement stmt) throws SQLException {
         stmt.setString(1, entity.getId().toString());
-        stmt.setString(1, entity.getNome());
-        stmt.setInt(1, entity.getQuantidade());
-        stmt.setDouble(1, entity.getValorTotal());
-        stmt.setDouble(1, entity.getValorPago());
-        stmt.setInt(1, entity.getProduto().getId());
-        stmt.setInt(1, entity.getConta().getId());
+        stmt.setString(1, entity.getName());
+        stmt.setInt(1, entity.getQuantity());
+        stmt.setDouble(1, entity.getTotalAmount());
+        stmt.setDouble(1, entity.getPaidAmount());
+        stmt.setInt(1, entity.getProduct().getId());
+        stmt.setInt(1, entity.getAccount().getId());
     }
 
     @Override
@@ -69,9 +69,9 @@ public class DAOSaleItem extends AbstractTemplateSqlDAO<ItemVenda, Timestamp>{
     }
 
     @Override
-    protected ItemVenda getEntityFromResultSet( ResultSet rs) throws SQLException {
+    protected SaleItem getEntityFromResultSet( ResultSet rs) throws SQLException {
 
-        ItemVenda saleItem = new ItemVenda(
+        SaleItem saleItem = new SaleItem(
                 Timestamp.valueOf(rs.getString("id")),
                 rs.getString("name"),
                 rs.getInt("quantity"),
@@ -81,7 +81,7 @@ public class DAOSaleItem extends AbstractTemplateSqlDAO<ItemVenda, Timestamp>{
     }
 
     @Override
-    protected Timestamp getEntityKey( ItemVenda entity) {
+    protected Timestamp getEntityKey( SaleItem entity) {
         return entity.getId();
     }
 }

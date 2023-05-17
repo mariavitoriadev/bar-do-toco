@@ -4,10 +4,10 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.ResultSet;
 
-import br.com.bardotoco.model.entities.Mesa;
+import br.com.bardotoco.model.entities.ClientTable;
 import br.com.bardotoco.persistence.utils.AbstractTemplateSqlDAO;
 
-public class DAOClientTable extends AbstractTemplateSqlDAO<Mesa, Integer>{
+public class DAOClientTable extends AbstractTemplateSqlDAO<ClientTable, Integer>{
 
     @Override
     protected String createSaveSql() {
@@ -42,8 +42,8 @@ public class DAOClientTable extends AbstractTemplateSqlDAO<Mesa, Integer>{
     }
 
     @Override
-    protected void setEntityToPreparedStatement(Mesa entity, PreparedStatement stmt) throws SQLException {
-        stmt.setInt(1, entity.getCodigo());
+    protected void setEntityToPreparedStatement(ClientTable entity, PreparedStatement stmt) throws SQLException {
+        stmt.setInt(1, entity.getId());
     }
 
     @Override
@@ -62,15 +62,15 @@ public class DAOClientTable extends AbstractTemplateSqlDAO<Mesa, Integer>{
     }
 
     @Override
-    protected Mesa getEntityFromResultSet(ResultSet rs) throws SQLException {
+    protected ClientTable getEntityFromResultSet(ResultSet rs) throws SQLException {
 
-        Mesa clientTable = new Mesa(
+        ClientTable clientTable = new ClientTable(
                 rs.getInt("id"));
         return clientTable;
     }
 
     @Override
-    protected Integer getEntityKey( Mesa entity) {
-        return entity.getCodigo();
+    protected Integer getEntityKey( ClientTable entity) {
+        return entity.getId();
     }
 }

@@ -2,16 +2,16 @@ package br.com.bardotoco.model.entities;
 
 public enum Status {
 
-    ABERTO("aberto"),
-    FECHADO("fechado");
+    OPENED("Aberto"),
+    CLOSED("Fechado");
 
-    private String descricao;
+    private String description;
 
-    Status(String descricao) {
-        this.descricao = descricao;
+    Status(String description) {
+        this.description = description;
     }
 
-    public String getDescricao() {
-        return descricao;
+    public String getDescription() {
+        return description;
     }
 }

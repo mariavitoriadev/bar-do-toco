@@ -39,7 +39,7 @@ public class DatabaseBuilder {
         builder.append("CREATE TABLE Product (\n");
         builder.append("id INTEGER PRIMARY KEY AUTOINCREMENT, \n");
         builder.append("name TEXT NOT NULL, \n");
-        builder.append("value REAL NOT NULL \n");
+        builder.append("price REAL NOT NULL \n");
         builder.append("); \n");
 
         System.out.println(builder.toString());

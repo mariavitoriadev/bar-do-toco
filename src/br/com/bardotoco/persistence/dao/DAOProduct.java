@@ -4,20 +4,20 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.ResultSet;
 
-import br.com.bardotoco.model.entities.Produto;
+import br.com.bardotoco.model.entities.Product;
 import br.com.bardotoco.persistence.utils.AbstractTemplateSqlDAO;
 
-public class DAOProduct extends AbstractTemplateSqlDAO<Produto, Integer>{
+public class DAOProduct extends AbstractTemplateSqlDAO<Product, Integer>{
 
     @Override
     protected String createSaveSql() {
-        return "INSERT INTO Product(name, value) " +
+        return "INSERT INTO Product(name, price) " +
                 "VALUES(?, ?)";
     }
 
     @Override
     protected String createUpdateSql() {
-        return "UPDATE Product SET name = ?, value = ? " +
+        return "UPDATE Product SET name = ?, price = ? " +
                 "WHERE id = ?";
     }
 
@@ -42,9 +42,9 @@ public class DAOProduct extends AbstractTemplateSqlDAO<Produto, Integer>{
     }
 
     @Override
-    protected void setEntityToPreparedStatement( Produto entity, PreparedStatement stmt) throws SQLException {
-        stmt.setString(1, entity.getNome());
-        stmt.setDouble(2, entity.getValor());
+    protected void setEntityToPreparedStatement(Product entity, PreparedStatement stmt) throws SQLException {
+        stmt.setString(1, entity.getName());
+        stmt.setDouble(2, entity.getPrice());
     }
 
     @Override
@@ -63,16 +63,16 @@ public class DAOProduct extends AbstractTemplateSqlDAO<Produto, Integer>{
     }
 
     @Override
-    protected Produto getEntityFromResultSet( ResultSet rs) throws SQLException {
-        Produto product = new Produto(
+    protected Product getEntityFromResultSet(ResultSet rs) throws SQLException {
+        Product product = new Product(
                 rs.getInt("id"),
                 rs.getString("name"),
-                rs.getDouble("value"));
+                rs.getDouble("price"));
         return product;
     }
 
     @Override
-    protected Integer getEntityKey( Produto entity) {
+    protected Integer getEntityKey( Product entity) {
         return entity.getId();
     }
 

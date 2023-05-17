@@ -5,10 +5,10 @@ import java.sql.SQLException;
 import java.sql.ResultSet;
 import java.time.LocalDateTime;
 
-import br.com.bardotoco.model.entities.Conta;
+import br.com.bardotoco.model.entities.Account;
 import br.com.bardotoco.persistence.utils.AbstractTemplateSqlDAO;
 
-public class DAOAccount extends AbstractTemplateSqlDAO<Conta, Integer>{
+public class DAOAccount extends AbstractTemplateSqlDAO<Account, Integer>{
 
     @Override
     protected String createSaveSql() {
@@ -43,12 +43,12 @@ public class DAOAccount extends AbstractTemplateSqlDAO<Conta, Integer>{
     }
 
     @Override
-    protected void setEntityToPreparedStatement(Conta entity, PreparedStatement stmt) throws SQLException {
-        stmt.setString(1, entity.getHorarioAbertura().toString());
-        stmt.setString(1, entity.getHorarioFechamento().toString());
-        stmt.setDouble(1, entity.getValorTotal());
-        stmt.setDouble(1, entity.getValorPago());
-        stmt.setInt(3, entity.getMesa().getCodigo());
+    protected void setEntityToPreparedStatement(Account entity, PreparedStatement stmt) throws SQLException {
+        stmt.setString(1, entity.getOpeningTime().toString());
+        stmt.setString(1, entity.getClosingTime().toString());
+        stmt.setDouble(1, entity.getTotalAmount());
+        stmt.setDouble(1, entity.getPaidAmount());
+        stmt.setInt(3, entity.getClientTable().getId());
     }
 
     @Override
@@ -67,9 +67,9 @@ public class DAOAccount extends AbstractTemplateSqlDAO<Conta, Integer>{
     }
 
     @Override
-    protected Conta getEntityFromResultSet( ResultSet rs) throws SQLException {
+    protected Account getEntityFromResultSet(ResultSet rs) throws SQLException {
 
-        Conta account = new Conta(
+        Account account = new Account(
                 rs.getInt("id"),
                 LocalDateTime.parse(rs.getString("openingTime")),
                 LocalDateTime.parse(rs.getString("closingTime")),
@@ -79,7 +79,7 @@ public class DAOAccount extends AbstractTemplateSqlDAO<Conta, Integer>{
     }
 
     @Override
-    protected Integer getEntityKey( Conta entity) {
+    protected Integer getEntityKey( Account entity) {
         return entity.getId();
     }
 }
