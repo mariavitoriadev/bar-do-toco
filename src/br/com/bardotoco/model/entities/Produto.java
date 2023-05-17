@@ -3,16 +3,16 @@ package br.com.bardotoco.model.entities;
 public class Produto {
     private int id;
     private String nome;
-    private float valor;
+    private double valor;
 
-    public void editarProduto(int id, String nome, float valor){
+    public void editarProduto(int id, String nome, double valor){
         this.id = id;
         this.nome = nome;
         this.valor = valor;
 
     }
 
-    public Produto(int id, String nome, float valor) {
+    public Produto(int id, String nome, double valor) {
         this.id = id;
         this.nome = nome;
         this.valor = valor;
@@ -34,11 +34,11 @@ public class Produto {
         this.nome = nome;
     }
 
-    public float getValor() {
+    public double getValor() {
         return valor;
     }
 
-    public void setValor(float valor) {
+    public void setValor(double valor) {
         this.valor = valor;
     }
 }

@@ -5,22 +5,17 @@ public class ItemVenda {
     private Timestamp id;
     private String nome;
     private int quantidade;
-    private float valorPago;
-    private float valorTotal;
+    private double valorPago;
+    private double valorTotal;
     private Conta conta;
     private Produto produto;
 
-    public ItemVenda() {
-    }
-
-    public ItemVenda(Timestamp id, String nome, int quantidade, float valorPago, float valorTotal, Conta conta, Produto produto) {
+    public ItemVenda(Timestamp id, String nome, int quantidade, double valorPago, double valorTotal) {
         this.id = id;
         this.nome = nome;
         this.quantidade = quantidade;
         this.valorPago = valorPago;
         this.valorTotal = valorTotal;
-        this.conta = conta;
-        this.produto = produto;
     }
 
     public void adicionarPagamento (int quantidade) {
@@ -51,19 +46,19 @@ public class ItemVenda {
         this.quantidade = quantidade;
     }
 
-    public float getValorPago() {
+    public double getValorPago() {
         return valorPago;
     }
 
-    public void setValorPago(int valorPago) {
+    public void setValorPago(double valorPago) {
         this.valorPago = valorPago;
     }
 
-    public float getValorTotal() {
+    public double getValorTotal() {
         return valorTotal;
     }
 
-    public void setValorTotal(int valorTotal) {
+    public void setValorTotal(double valorTotal) {
         this.valorTotal = valorTotal;
     }
 

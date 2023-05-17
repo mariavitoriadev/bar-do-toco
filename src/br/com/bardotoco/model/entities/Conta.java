@@ -8,25 +8,18 @@ public class Conta {
     private int id;
     private LocalDateTime horarioAbertura;
     private LocalDateTime horarioFechamento;
-    private int valorTotal;
-    private int valorPago;
+    private double valorTotal;
+    private double valorPago;
     private ArrayList<Timestamp> listaItensPagamento;
     private int valorPagamento;
     private Mesa mesa;
 
-    public Conta( LocalDateTime horarioAbertura, Mesa mesa) {
-        this.horarioAbertura = horarioAbertura;
-        this.mesa = mesa;
-    }
-
-    public Conta(int id, LocalDateTime horarioAbertura, LocalDateTime horarioFechamento, int valorTotal, int valorPago, ArrayList<Timestamp> listaItensPagamento, int valorPagamento) {
+    public Conta(int id, LocalDateTime horarioAbertura, LocalDateTime horarioFechamento, double valorTotal, double valorPago) {
         this.id = id;
         this.horarioAbertura = horarioAbertura;
         this.horarioFechamento = horarioFechamento;
         this.valorTotal = valorTotal;
         this.valorPago = valorPago;
-        this.listaItensPagamento = listaItensPagamento;
-        this.valorPagamento = valorPagamento;
     }
 
     /*============================================================*/
@@ -45,11 +38,11 @@ public class Conta {
         return horarioFechamento;
     }
 
-    public int getValorTotal() {
+    public double getValorTotal() {
         return valorTotal;
     }
 
-    public int getValorPago() {
+    public double getValorPago() {
         return valorPago;
     }
 
@@ -75,11 +68,11 @@ public class Conta {
         this.horarioFechamento = horarioFechamento;
     }
 
-    public void setValorTotal(int valorTotal) {
+    public void setValorTotal(double valorTotal) {
         this.valorTotal = valorTotal;
     }
 
-    public void setValorPago(int valorPago) {
+    public void setValorPago(double valorPago) {
         this.valorPago = valorPago;
     }
 
