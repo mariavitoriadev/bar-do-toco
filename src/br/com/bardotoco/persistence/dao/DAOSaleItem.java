@@ -12,13 +12,13 @@ public class DAOSaleItem extends AbstractTemplateSqlDAO<SaleItem, Timestamp>{
 
     @Override
     protected String createSaveSql() {
-        return "INSERT INTO SaleItem(id, name, quantity, totalAmout, paidAmount, account, product) " +
+        return "INSERT INTO SaleItem(id, name, quantity, totalAmount, paidAmount, account, product) " +
                 "VALUES(?, ?, ?, ?, ?, ?, ?)";
     }
 
     @Override
     protected String createUpdateSql() {
-        return "UPDATE SaleItem SET name = ?, quantity = ?, totalAmout = ?, paidAmount = ?, account = ?, product = ? " +
+        return "UPDATE SaleItem SET name = ?, quantity = ?, totalAmount = ?, paidAmount = ?, account = ?, product = ? " +
                 "WHERE id = ?";
     }
 
@@ -45,12 +45,12 @@ public class DAOSaleItem extends AbstractTemplateSqlDAO<SaleItem, Timestamp>{
     @Override
     protected void setEntityToPreparedStatement(SaleItem entity, PreparedStatement stmt) throws SQLException {
         stmt.setString(1, entity.getId().toString());
-        stmt.setString(1, entity.getName());
-        stmt.setInt(1, entity.getQuantity());
-        stmt.setDouble(1, entity.getTotalAmount());
-        stmt.setDouble(1, entity.getPaidAmount());
-        stmt.setInt(1, entity.getProduct().getId());
-        stmt.setInt(1, entity.getAccount().getId());
+        stmt.setString(2, entity.getName());
+        stmt.setInt(3, entity.getQuantity());
+        stmt.setDouble(4, entity.getTotalAmount());
+        stmt.setDouble(5, entity.getPaidAmount());
+        stmt.setInt(6, entity.getProduct().getId());
+        stmt.setInt(7, entity.getAccount().getId());
     }
 
     @Override

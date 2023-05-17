@@ -42,7 +42,6 @@ public class DatabaseBuilder {
         builder.append("price REAL NOT NULL \n");
         builder.append("); \n");
 
-        System.out.println(builder.toString());
         return builder.toString();
     }
 
@@ -53,7 +52,6 @@ public class DatabaseBuilder {
         builder.append("id INTEGER PRIMARY KEY NOT NULL UNIQUE \n");
         builder.append("); \n");
 
-        System.out.println(builder.toString());
         return builder.toString();
     }
 
@@ -64,13 +62,12 @@ public class DatabaseBuilder {
         builder.append("id INTEGER PRIMARY KEY AUTOINCREMENT, \n");
         builder.append("clientTable INTEGER NOT NULL, \n");
         builder.append("openingTime TEXT NOT NULL, \n");
-        builder.append("closingTime TEXT NOT NULL, \n");
+        builder.append("closingTime TEXT, \n");
         builder.append("totalAmount REAL, \n");
         builder.append("paidAmount REAL, \n");
         builder.append("FOREIGN KEY(clientTable) REFERENCES ClientTable(id)\n");
         builder.append("); \n");
 
-        System.out.println(builder.toString());
         return builder.toString();
     }
 
@@ -79,7 +76,7 @@ public class DatabaseBuilder {
 
         builder.append("CREATE TABLE SaleItem (\n");
         builder.append("id TEXT PRIMARY KEY NOT NULL, \n");
-        builder.append("name TEXT NOT NULL, \n");
+        builder.append("name TEXT, \n");
         builder.append("quantity INTEGER NOT NULL, \n");
         builder.append("totalAmount REAL, \n");
         builder.append("paidAmount REAL, \n");
@@ -89,7 +86,6 @@ public class DatabaseBuilder {
         builder.append("FOREIGN KEY(product) REFERENCES Product(id) \n");
         builder.append("); \n");
 
-        System.out.println(builder.toString());
         return builder.toString();
     }
 

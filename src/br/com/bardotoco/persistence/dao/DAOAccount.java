@@ -13,7 +13,7 @@ public class DAOAccount extends AbstractTemplateSqlDAO<Account, Integer>{
     @Override
     protected String createSaveSql() {
         return "INSERT INTO Account(openingTime, closingTime, totalAmount, paidAmount, clientTable) " +
-                "VALUES(?, ?)";
+                "VALUES(?, ?, ?, ?, ?)";
     }
 
     @Override
@@ -45,10 +45,10 @@ public class DAOAccount extends AbstractTemplateSqlDAO<Account, Integer>{
     @Override
     protected void setEntityToPreparedStatement(Account entity, PreparedStatement stmt) throws SQLException {
         stmt.setString(1, entity.getOpeningTime().toString());
-        stmt.setString(1, entity.getClosingTime().toString());
-        stmt.setDouble(1, entity.getTotalAmount());
-        stmt.setDouble(1, entity.getPaidAmount());
-        stmt.setInt(3, entity.getClientTable().getId());
+        if (entity.getClosingTime() != null) stmt.setString(2, entity.getClosingTime().toString());
+        stmt.setDouble(3, entity.getTotalAmount());
+        stmt.setDouble(4, entity.getPaidAmount());
+        stmt.setInt(5, entity.getClientTable().getId());
     }
 
     @Override

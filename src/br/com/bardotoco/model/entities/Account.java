@@ -50,7 +50,9 @@ public class Account {
         return paymentAmount;
     }
 
-    public ClientTable getClientTable() { return clientTable; }
+    public ClientTable getClientTable() {
+        return clientTable;
+    }
 
     public void setId(int id) {
         this.id = id;
@@ -80,6 +82,8 @@ public class Account {
         this.paymentAmount = paymentAmount;
     }
 
-    public void setClientTable(ClientTable clientTable) { this.clientTable = clientTable;}
+    public void setClientTable(ClientTable clientTable) {
+        this.clientTable = clientTable;
+    }
 
 }

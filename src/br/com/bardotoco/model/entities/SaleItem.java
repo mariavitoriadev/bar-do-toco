@@ -18,6 +18,10 @@ public class SaleItem {
         this.paidAmount = paidAmount;
     }
 
+    public void updateTotalAmount() {
+        if (product != null)
+            setTotalAmount(product.getPrice() * quantity);
+    }
 
     public Timestamp getId() {
         return id;
@@ -59,11 +63,20 @@ public class SaleItem {
         this.totalAmount = totalAmount;
     }
 
-    public Account getAccount() { return account; }
+    public Account getAccount() {
+        return account;
+    }
 
-    public void setAccount(Account account) { this.account = account; }
+    public void setAccount(Account account) {
+        this.account = account;
+    }
 
-    public Product getProduct() { return product; }
+    public Product getProduct() {
+        return product;
+    }
 
-    public void setProduct(Product product) { this.product = product; }
+    public void setProduct(Product product) {
+        this.product = product;
+        updateTotalAmount();
+    }
 }
