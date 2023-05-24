@@ -1,0 +1,112 @@
+package br.com.bardotoco.domain.entities.account;
+import br.com.bardotoco.domain.entities.clientTable.ClientTable;
+
+import java.time.LocalDateTime;
+
+public class Account {
+    private Integer id;
+    private LocalDateTime openingTime;
+    private LocalDateTime closingTime;
+    private double totalAmount;
+    private double paidAmount;
+    private double paidByValueAmount;
+    private double paidBySaleItemAmount;
+    private ClientTable clientTable;
+
+    public Account(LocalDateTime openingTime) {
+        this.openingTime = openingTime;
+    }
+
+    public Account() {
+        this(0, LocalDateTime.now(), null, 0.0, 0.0, 0.0, 0.0);
+    }
+
+    public Account(Integer id, LocalDateTime openingTime, LocalDateTime closingTime, double totalAmount, double paidAmount, double paidByValueAmount, double paidBySaleItemAmount) {
+        this.id = id;
+        this.openingTime = openingTime;
+        this.closingTime = closingTime;
+        this.totalAmount = totalAmount;
+        this.paidAmount = paidAmount;
+        this.paidByValueAmount = paidByValueAmount;
+        this.paidBySaleItemAmount = paidBySaleItemAmount;
+    }
+
+    public void updateTotalAmount(double totalAmount) {
+        if(totalAmount == 0) {
+            this.totalAmount = totalAmount;
+            return;
+        }
+        this.totalAmount += totalAmount;
+    }
+
+    public void updatePaidByValueAmount(double paymentValue) {
+        if(paidByValueAmount == 0) {
+            paidByValueAmount = paymentValue;
+            return;
+        }
+        paidByValueAmount += paymentValue;
+    }
+
+    public void updatePaidBySaleItemAmount(double paymentValue) {
+        if(paidBySaleItemAmount == 0) {
+            paidBySaleItemAmount = paymentValue;
+            return;
+        }
+        paidBySaleItemAmount += paymentValue;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public LocalDateTime getOpeningTime() {
+        return openingTime;
+    }
+
+    public LocalDateTime getClosingTime() {
+        return closingTime;
+    }
+
+    public double getTotalAmount() {
+        return totalAmount;
+    }
+
+    public double getPaidAmount() {
+        return paidAmount;
+    }
+
+    public double getPaidByValueAmount() { return paidByValueAmount; }
+
+    public double getPaidBySaleItemAmount() {
+        return paidBySaleItemAmount;
+    }
+
+    public ClientTable getClientTable() {
+        return clientTable;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public void setOpeningTime(LocalDateTime openingTime) {
+        this.openingTime = openingTime;
+    }
+
+    public void setClosingTime(LocalDateTime closingTime) {
+        this.closingTime = closingTime;
+    }
+
+    public void setTotalAmount(double totalAmount) {
+        this.totalAmount = totalAmount;
+    }
+
+    public void setPaidAmount(double paidAmount) {
+        this.paidAmount = paidAmount;
+    }
+
+    public void setClientTable(ClientTable clientTable) {
+        this.clientTable = clientTable;
+    }
+
+}
