@@ -1,7 +1,9 @@
 package br.com.bardotoco.application.repository.sqlite;
 
 import br.com.bardotoco.domain.entities.account.Account;
+import br.com.bardotoco.domain.entities.clientTable.ClientTable;
 import br.com.bardotoco.domain.useCases.account.AccountDAO;
+import br.com.bardotoco.domain.useCases.clientTable.ClientTableDAO;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -55,8 +57,25 @@ public class SqliteAccountDAO implements AccountDAO {
         return Optional.ofNullable(account);
     }
 
+    @Override
+    public List<Account> findNotClosedAccounts() {
+        String sql = "SELECT * FROM Account WHERE closingTime IS NULL;";
+        List<Account> accounts = new ArrayList<>();
+
+        try(PreparedStatement stmt = ConnectionFactory.createPreparedStatement(sql)){
+            ResultSet rs = stmt.executeQuery();
+            while(rs.next()){
+                Account account = resultSetToEntity(rs);
+                accounts.add(account);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return accounts;
+    }
+
     private Account resultSetToEntity(ResultSet rs) throws SQLException {
-        return new Account(
+        Account account = new Account(
                 rs.getInt("id"),
                 LocalDateTime.parse(rs.getString("openingTime")),
                 rs.getString("closingTime") != null ? LocalDateTime.parse(rs.getString("closingTime")) : null,
@@ -65,6 +84,12 @@ public class SqliteAccountDAO implements AccountDAO {
                 rs.getDouble("paidByValueAmount"),
                 rs.getDouble("paidBySaleItemAmount")
         );
+
+        ClientTableDAO clientTableDAO = new SqliteClientTableDAO();
+        ClientTable clientTable = clientTableDAO.findOne(rs.getInt("clientTable")).get();
+        account.setClientTable(clientTable);
+
+        return account;
     }
 
     @Override

@@ -14,6 +14,7 @@ public class SaleItem {
     public SaleItem( String name, Integer quantity) {
         this.name = name;
         this.quantity = quantity;
+        updateTotalAmount();
     }
 
     public SaleItem(Integer id, String name, Integer quantity, double totalAmount, double paidAmount) {
@@ -22,6 +23,7 @@ public class SaleItem {
         this.quantity = quantity;
         this.totalAmount = totalAmount;
         this.paidAmount = paidAmount;
+        updateTotalAmount();
     }
 
     @Override
@@ -63,6 +65,7 @@ public class SaleItem {
 
     public void setQuantity(Integer quantity) {
         this.quantity = quantity;
+        updateTotalAmount();
     }
 
     public double getPaidAmount() {

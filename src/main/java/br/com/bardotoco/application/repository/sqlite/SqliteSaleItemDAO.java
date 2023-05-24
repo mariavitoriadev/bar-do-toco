@@ -1,7 +1,10 @@
 package br.com.bardotoco.application.repository.sqlite;
 
 import br.com.bardotoco.domain.entities.account.Account;
+import br.com.bardotoco.domain.entities.product.Product;
 import br.com.bardotoco.domain.entities.saleitem.SaleItem;
+import br.com.bardotoco.domain.useCases.account.AccountDAO;
+import br.com.bardotoco.domain.useCases.product.ProductDAO;
 import br.com.bardotoco.domain.useCases.saleItem.SaleItemDAO;
 
 import java.sql.PreparedStatement;
@@ -60,6 +63,14 @@ public class SqliteSaleItemDAO implements SaleItemDAO {
                 rs.getDouble("totalAmount"),
                 rs.getDouble("paidAmount")
         );
+
+        AccountDAO accountDAO = new SqliteAccountDAO();
+        Account account = accountDAO.findOne(rs.getInt("account")).get();
+        saleItem.setAccount(account);
+
+        ProductDAO productDAO = new SqliteProductDAO();
+        Product product = productDAO.findOne(rs.getInt("product")).get();
+        saleItem.setProduct(product);
 
         return saleItem;
     }

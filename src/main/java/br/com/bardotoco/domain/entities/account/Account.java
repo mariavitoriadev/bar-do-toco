@@ -13,8 +13,9 @@ public class Account {
     private double paidBySaleItemAmount;
     private ClientTable clientTable;
 
-    public Account(LocalDateTime openingTime) {
+    public Account(LocalDateTime openingTime, ClientTable clientTable) {
         this.openingTime = openingTime;
+        this.clientTable = clientTable;
     }
 
     public Account() {
@@ -39,20 +40,28 @@ public class Account {
         this.totalAmount += totalAmount;
     }
 
+    public void updatePaidAmount() {
+        paidAmount = paidByValueAmount + paidBySaleItemAmount;
+    }
+
     public void updatePaidByValueAmount(double paymentValue) {
         if(paidByValueAmount == 0) {
             paidByValueAmount = paymentValue;
+            updatePaidAmount();
             return;
         }
         paidByValueAmount += paymentValue;
+        updatePaidAmount();
     }
 
     public void updatePaidBySaleItemAmount(double paymentValue) {
         if(paidBySaleItemAmount == 0) {
             paidBySaleItemAmount = paymentValue;
+            updatePaidAmount();
             return;
         }
         paidBySaleItemAmount += paymentValue;
+        updatePaidAmount();
     }
 
     public Integer getId() {
