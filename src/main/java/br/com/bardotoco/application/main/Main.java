@@ -50,9 +50,9 @@ public class Main {
         SaleItemDAO saleItemDAO = new SqliteSaleItemDAO();
 
         // Create Product
-        Product product = new Product(1, "Guaraná 2L", 6.80 );
-        Product product2 = new Product(2, "Skol 1L", 11.50);
-        Product product3 = new Product(3, "Batata Frita Pequena", 18.50);
+        Product product = new Product(1, "Pepsi 2L", 6.80 );
+        Product product2 = new Product(2, "Amstel 1L", 11.50);
+        Product product3 = new Product(3, "Batata Frita Média", 18.50);
 
         createProductUseCase = new CreateProductUseCase(productDAO);
         product.setId(createProductUseCase.insert(product));
