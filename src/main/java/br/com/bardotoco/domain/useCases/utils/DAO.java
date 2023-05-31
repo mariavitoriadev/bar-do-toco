@@ -1,4 +1,4 @@
-package br.com.bardotoco.domain.useCases.utils;
+package main.java.br.com.bardotoco.domain.useCases.utils;
 
 import java.util.List;
 import java.util.Optional;

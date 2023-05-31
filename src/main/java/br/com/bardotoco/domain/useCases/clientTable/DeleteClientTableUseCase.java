@@ -1,7 +1,7 @@
-package br.com.bardotoco.domain.useCases.clientTable;
+package main.java.br.com.bardotoco.domain.useCases.clientTable;
 
-import br.com.bardotoco.domain.entities.clientTable.ClientTable;
-import br.com.bardotoco.domain.useCases.utils.EntityNotFoundException;
+import main.java.br.com.bardotoco.domain.entities.clientTable.ClientTable;
+import main.java.br.com.bardotoco.domain.useCases.utils.EntityNotFoundException;
 
 public class DeleteClientTableUseCase {
 

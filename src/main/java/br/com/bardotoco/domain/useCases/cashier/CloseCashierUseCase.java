@@ -1,10 +1,10 @@
-package br.com.bardotoco.domain.useCases.cashier;
+package main.java.br.com.bardotoco.domain.useCases.cashier;
 
-import br.com.bardotoco.domain.entities.account.Account;
-import br.com.bardotoco.domain.entities.cashier.Cashier;
-import br.com.bardotoco.domain.entities.cashier.CashierStatus;
-import br.com.bardotoco.domain.useCases.account.AccountDAO;
-import br.com.bardotoco.domain.useCases.utils.CashierNotOpenedException;
+import main.java.br.com.bardotoco.domain.entities.account.Account;
+import main.java.br.com.bardotoco.domain.entities.cashier.Cashier;
+import main.java.br.com.bardotoco.domain.entities.cashier.CashierStatus;
+import main.java.br.com.bardotoco.domain.useCases.account.AccountDAO;
+import main.java.br.com.bardotoco.domain.useCases.utils.CashierNotOpenedException;
 
 public class CloseCashierUseCase {
     private Cashier cashier = Cashier.getInstance();

@@ -1,11 +1,11 @@
-package br.com.bardotoco.application.repository.sqlite;
+package main.java.br.com.bardotoco.application.repository.sqlite;
 
-import br.com.bardotoco.domain.entities.account.Account;
-import br.com.bardotoco.domain.entities.product.Product;
-import br.com.bardotoco.domain.entities.saleitem.SaleItem;
-import br.com.bardotoco.domain.useCases.account.AccountDAO;
-import br.com.bardotoco.domain.useCases.product.ProductDAO;
-import br.com.bardotoco.domain.useCases.saleItem.SaleItemDAO;
+import main.java.br.com.bardotoco.domain.entities.account.Account;
+import main.java.br.com.bardotoco.domain.entities.product.Product;
+import main.java.br.com.bardotoco.domain.entities.saleitem.SaleItem;
+import main.java.br.com.bardotoco.domain.useCases.account.AccountDAO;
+import main.java.br.com.bardotoco.domain.useCases.product.ProductDAO;
+import main.java.br.com.bardotoco.domain.useCases.saleItem.SaleItemDAO;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

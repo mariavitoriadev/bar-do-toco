@@ -1,5 +1,5 @@
-package br.com.bardotoco.domain.entities.account;
-import br.com.bardotoco.domain.entities.clientTable.ClientTable;
+package main.java.br.com.bardotoco.domain.entities.account;
+import main.java.br.com.bardotoco.domain.entities.clientTable.ClientTable;
 
 import java.time.LocalDateTime;
 

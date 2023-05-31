@@ -1,11 +1,11 @@
-package br.com.bardotoco.domain.useCases.saleItem;
+package main.java.br.com.bardotoco.domain.useCases.saleItem;
 
-import br.com.bardotoco.domain.entities.cashier.Cashier;
-import br.com.bardotoco.domain.entities.cashier.CashierStatus;
-import br.com.bardotoco.domain.entities.saleitem.SaleItem;
-import br.com.bardotoco.domain.useCases.account.AccountDAO;
-import br.com.bardotoco.domain.useCases.product.ProductDAO;
-import br.com.bardotoco.domain.useCases.utils.*;
+import main.java.br.com.bardotoco.domain.entities.cashier.Cashier;
+import main.java.br.com.bardotoco.domain.entities.cashier.CashierStatus;
+import main.java.br.com.bardotoco.domain.entities.saleitem.SaleItem;
+import main.java.br.com.bardotoco.domain.useCases.account.AccountDAO;
+import main.java.br.com.bardotoco.domain.useCases.product.ProductDAO;
+import main.java.br.com.bardotoco.domain.useCases.utils.*;
 
 public class CreateSaleItemUseCase {
     private SaleItemDAO saleItemDAO;

@@ -1,4 +1,4 @@
-package br.com.bardotoco.application.repository.sqlite;
+package main.java.br.com.bardotoco.application.repository.sqlite;
 
 import java.nio.file.Files;
 import java.nio.file.Paths;

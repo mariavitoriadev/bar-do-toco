@@ -1,7 +1,7 @@
-package br.com.bardotoco.domain.useCases.saleItem;
+package main.java.br.com.bardotoco.domain.useCases.saleItem;
 
-import br.com.bardotoco.domain.entities.saleitem.SaleItem;
-import br.com.bardotoco.domain.useCases.utils.EntityNotFoundException;
+import main.java.br.com.bardotoco.domain.entities.saleitem.SaleItem;
+import main.java.br.com.bardotoco.domain.useCases.utils.EntityNotFoundException;
 
 public class DeleteSaleItemUseCase {
     private SaleItemDAO saleItemDAO;

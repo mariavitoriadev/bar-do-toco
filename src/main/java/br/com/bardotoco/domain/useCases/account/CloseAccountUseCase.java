@@ -1,10 +1,10 @@
-package br.com.bardotoco.domain.useCases.account;
+package main.java.br.com.bardotoco.domain.useCases.account;
 
-import br.com.bardotoco.domain.entities.account.Account;
-import br.com.bardotoco.domain.entities.cashier.Cashier;
-import br.com.bardotoco.domain.entities.cashier.CashierStatus;
-import br.com.bardotoco.domain.useCases.utils.CashierNotOpenedException;
-import br.com.bardotoco.domain.useCases.utils.EntityNotFoundException;
+import main.java.br.com.bardotoco.domain.entities.account.Account;
+import main.java.br.com.bardotoco.domain.entities.cashier.Cashier;
+import main.java.br.com.bardotoco.domain.entities.cashier.CashierStatus;
+import main.java.br.com.bardotoco.domain.useCases.utils.CashierNotOpenedException;
+import main.java.br.com.bardotoco.domain.useCases.utils.EntityNotFoundException;
 
 import java.time.LocalDateTime;
 

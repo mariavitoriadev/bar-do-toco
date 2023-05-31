@@ -1,7 +1,7 @@
-package br.com.bardotoco.application.repository.sqlite;
+package main.java.br.com.bardotoco.application.repository.sqlite;
 
-import br.com.bardotoco.domain.entities.product.Product;
-import br.com.bardotoco.domain.useCases.product.ProductDAO;
+import main.java.br.com.bardotoco.domain.entities.product.Product;
+import main.java.br.com.bardotoco.domain.useCases.product.ProductDAO;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

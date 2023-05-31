@@ -1,6 +1,7 @@
-package br.com.bardotoco.domain.entities.saleitem;
-import br.com.bardotoco.domain.entities.account.Account;
-import br.com.bardotoco.domain.entities.product.Product;
+package main.java.br.com.bardotoco.domain.entities.saleitem;
+
+import main.java.br.com.bardotoco.domain.entities.account.Account;
+import main.java.br.com.bardotoco.domain.entities.product.Product;
 
 public class SaleItem {
     private Integer id;

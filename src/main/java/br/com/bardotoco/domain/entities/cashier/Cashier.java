@@ -1,4 +1,4 @@
-package br.com.bardotoco.domain.entities.cashier;
+package main.java.br.com.bardotoco.domain.entities.cashier;
 
 public class Cashier {
 

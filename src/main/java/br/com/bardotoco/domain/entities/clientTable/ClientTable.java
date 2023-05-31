@@ -1,5 +1,5 @@
-package br.com.bardotoco.domain.entities.clientTable;
-import br.com.bardotoco.domain.entities.account.Account;
+package main.java.br.com.bardotoco.domain.entities.clientTable;
+import main.java.br.com.bardotoco.domain.entities.account.Account;
 
 public class ClientTable {
     private Integer id;

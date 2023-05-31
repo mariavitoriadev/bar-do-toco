@@ -1,8 +1,8 @@
-package br.com.bardotoco.domain.useCases.cashier;
+package main.java.br.com.bardotoco.domain.useCases.cashier;
 
-import br.com.bardotoco.domain.entities.cashier.Cashier;
-import br.com.bardotoco.domain.entities.cashier.CashierStatus;
-import br.com.bardotoco.domain.useCases.utils.CashierNotClosedException;
+import main.java.br.com.bardotoco.domain.entities.cashier.Cashier;
+import main.java.br.com.bardotoco.domain.entities.cashier.CashierStatus;
+import main.java.br.com.bardotoco.domain.useCases.utils.CashierNotClosedException;
 
 public class OpenCashierUseCase {
 

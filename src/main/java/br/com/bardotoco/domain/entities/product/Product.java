@@ -1,4 +1,4 @@
-package br.com.bardotoco.domain.entities.product;
+package main.java.br.com.bardotoco.domain.entities.product;
 
 public class Product {
     private Integer id;

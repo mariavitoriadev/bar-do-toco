@@ -1,7 +1,7 @@
-package br.com.bardotoco.domain.useCases.product;
+package main.java.br.com.bardotoco.domain.useCases.product;
 
-import br.com.bardotoco.domain.useCases.utils.DAO;
-import br.com.bardotoco.domain.entities.product.Product;
+import main.java.br.com.bardotoco.domain.useCases.utils.DAO;
+import main.java.br.com.bardotoco.domain.entities.product.Product;
 
 import java.util.Optional;
 

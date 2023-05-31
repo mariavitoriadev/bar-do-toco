@@ -1,8 +1,8 @@
-package br.com.bardotoco.domain.useCases.product;
+package main.java.br.com.bardotoco.domain.useCases.product;
 
-import br.com.bardotoco.domain.entities.product.Product;
-import br.com.bardotoco.domain.useCases.utils.Validator;
-import br.com.bardotoco.domain.useCases.utils.Notification;
+import main.java.br.com.bardotoco.domain.entities.product.Product;
+import main.java.br.com.bardotoco.domain.useCases.utils.Validator;
+import main.java.br.com.bardotoco.domain.useCases.utils.Notification;
 
 public class ProductInputRequestValidator extends Validator<Product> {
 

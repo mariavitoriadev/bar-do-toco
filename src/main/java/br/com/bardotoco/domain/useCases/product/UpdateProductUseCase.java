@@ -1,12 +1,12 @@
-package br.com.bardotoco.domain.useCases.product;
+package main.java.br.com.bardotoco.domain.useCases.product;
 
-import br.com.bardotoco.domain.entities.cashier.Cashier;
-import br.com.bardotoco.domain.entities.cashier.CashierStatus;
-import br.com.bardotoco.domain.entities.product.Product;
-import br.com.bardotoco.domain.useCases.utils.CashierNotClosedException;
-import br.com.bardotoco.domain.useCases.utils.EntityNotFoundException;
-import br.com.bardotoco.domain.useCases.utils.Notification;
-import br.com.bardotoco.domain.useCases.utils.Validator;
+import main.java.br.com.bardotoco.domain.entities.cashier.Cashier;
+import main.java.br.com.bardotoco.domain.entities.cashier.CashierStatus;
+import main.java.br.com.bardotoco.domain.entities.product.Product;
+import main.java.br.com.bardotoco.domain.useCases.utils.CashierNotClosedException;
+import main.java.br.com.bardotoco.domain.useCases.utils.EntityNotFoundException;
+import main.java.br.com.bardotoco.domain.useCases.utils.Notification;
+import main.java.br.com.bardotoco.domain.useCases.utils.Validator;
 
 public class UpdateProductUseCase {
     private ProductDAO productDAO;
