@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="324.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bardotoco.application.controller.ProductManagementUIController">
+   <children>
+      <TableView fx:id="tableView" layoutX="22.0" layoutY="58.0" prefHeight="178.0" prefWidth="556.0">
+        <columns>
+          <TableColumn fx:id="cName" prefWidth="413.0" text="Nome" />
+          <TableColumn fx:id="cPrice" minWidth="0.0" prefWidth="116.0" text="Preço" />
+        </columns>
+      </TableView>
+      <Pane layoutX="22.0" layoutY="259.0" prefHeight="44.0" prefWidth="556.0">
+         <children>
+            <Button fx:id="btnBack" layoutY="10.0" mnemonicParsing="false" onAction="#backToPreviousScene" text="Voltar" />
+            <Button fx:id="btnEdit" layoutX="407.0" layoutY="10.0" mnemonicParsing="false" onAction="#editProduct" text="Editar" />
+            <Button fx:id="btnDelete" layoutX="327.0" layoutY="10.0" mnemonicParsing="false" onAction="#deleteProduct" text="Deletar" />
+            <Button fx:id="btnNew" layoutX="476.0" layoutY="10.0" mnemonicParsing="false" onAction="#createProduct" text="Adicionar" />
+         </children>
+      </Pane>
+      <Label layoutX="24.0" layoutY="22.0" text="Produtos:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="158.0" prefWidth="332.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bardotoco.application.controller.SaleItemPaymentUIController">
+   <children>
+      <Label layoutX="26.0" layoutY="66.0" text="Quantidade:" />
+      <TextField fx:id="txtQuantity" layoutX="129.0" layoutY="62.0" />
+      <Button fx:id="btnConfirm" layoutX="244.0" layoutY="109.0" mnemonicParsing="false" onAction="#paymentBySaleItem" text="Pagar" />
+      <Button fx:id="btnCancel" layoutX="25.0" layoutY="109.0" mnemonicParsing="false" onAction="#backToPreviousScene" text="Cancelar" />
+      <Label layoutX="26.0" layoutY="24.0" text="Pagar por item">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

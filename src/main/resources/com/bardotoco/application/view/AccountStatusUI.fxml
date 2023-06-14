@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="370.0" prefWidth="609.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bardotoco.application.controller.AccountStatusUIController">
+   <children>
+      <Label layoutX="21.0" layoutY="26.0" text="Status da conta">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="21.0" layoutY="66.0" text="Horario de abertura:" />
+      <Label fx:id="lbOpeningHour" layoutX="165.0" layoutY="66.0" />
+      <Label layoutX="21.0" layoutY="94.0" text="Horario de fechamento:" />
+      <Label fx:id="lbClosingHour" layoutX="188.0" layoutY="94.0" />
+      <Label layoutX="21.0" layoutY="122.0" text="Valor Total:" />
+      <Label fx:id="lbTotalValue" layoutX="107.0" layoutY="122.0" prefHeight="16.0" prefWidth="85.0" />
+      <Label layoutX="263.0" layoutY="122.0" text="Valor Pago:" />
+      <Label fx:id="lbPaidValue" layoutX="349.0" layoutY="122.0" prefHeight="16.0" prefWidth="75.0" />
+      <Label layoutX="20.0" layoutY="158.0" text="Items de Venda:">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <TableView fx:id="tableView" layoutX="21.0" layoutY="187.0" prefHeight="116.0" prefWidth="554.0">
+         <columns>
+            <TableColumn fx:id="cName" prefWidth="121.0" text="Nome" />
+            <TableColumn fx:id="cQuantity" prefWidth="135.0" text="Quantidade" />
+            <TableColumn fx:id="cTotalAmount" prefWidth="105.0" text="Valor Total" />
+            <TableColumn fx:id="cPaidAmount" prefWidth="137.0" text="Valor Pago" />
+         </columns>
+      </TableView>
+      <Button fx:id="btnBack" layoutX="21.0" layoutY="313.0" mnemonicParsing="false" onAction="#backToPreviousScene" text="Voltar" />
+   </children>
+</AnchorPane>

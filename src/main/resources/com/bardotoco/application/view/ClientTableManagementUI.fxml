@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="335.0" prefWidth="599.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bardotoco.application.controller.ClientTableManagementUIController">
+   <children>
+      <TableView fx:id="tableView" layoutX="25.0" layoutY="56.0" prefHeight="211.0" prefWidth="544.0">
+        <columns>
+          <TableColumn fx:id="cTable" prefWidth="543.0" text="Mesa" />
+        </columns>
+      </TableView>
+      <Pane layoutX="26.0" layoutY="274.0" prefHeight="44.0" prefWidth="544.0">
+        <children>
+           <Button fx:id="btnBack" layoutY="10.0" mnemonicParsing="false" onAction="#backToPreviousScene" text="Voltar" />
+           <Button fx:id="btnDelete" layoutX="351.0" layoutY="12.0" mnemonicParsing="false" onAction="#deleteClientTable" text="Deletar" />
+           <Button fx:id="btnNew" layoutX="464.0" layoutY="10.0" mnemonicParsing="false" onAction="#createClientTable" text="Adicionar" />
+        </children>
+  </Pane>
+      <Label layoutX="25.0" layoutY="23.0" text="Mesas:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

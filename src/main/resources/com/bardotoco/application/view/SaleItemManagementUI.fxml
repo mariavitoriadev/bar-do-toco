@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="404.0" prefWidth="803.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bardotoco.application.controller.SaleItemManagementUIController">
+   <children>
+       <Label layoutX="32.0" layoutY="27.0" text="Items de Venda:">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+
+      <TableView fx:id="tableView" layoutX="32.0" layoutY="72.0" prefHeight="237.0" prefWidth="736.0">
+        <columns>
+          <TableColumn fx:id="cName" prefWidth="121.0" text="Nome" />
+          <TableColumn fx:id="cQuantity" prefWidth="135.0" text="Quantidade" />
+          <TableColumn fx:id="cTotalAmount" prefWidth="105.0" text="Valor Total" />
+          <TableColumn fx:id="cPaidAmount" prefWidth="137.0" text="Valor Pago" />
+        </columns>
+      </TableView>
+
+       <Pane layoutX="32.0" layoutY="320.0" prefHeight="44.0" prefWidth="736.0">
+           <children>
+               <Button fx:id="btnBack" layoutY="10.0" mnemonicParsing="false" onAction="#backToPreviousScene" text="Voltar" />
+               <Button fx:id="btnDelete" layoutX="608.0" layoutY="10.0" mnemonicParsing="false" onAction="#deleteSaleItem" text="Deletar" />
+               <Button fx:id="btnEdit" layoutX="539.0" layoutY="10.0" mnemonicParsing="false" onAction="#editSaleItem" text="Editar" />
+               <Button fx:id="btnNew" layoutX="686.0" layoutY="10.0" mnemonicParsing="false" onAction="#createSaleItem" text="Criar" />
+               <Button fx:id="btnPayItem" layoutX="439.0" layoutY="10.0" mnemonicParsing="false" onAction="#paySaleItem" text="Pagar Item" />
+           </children>
+       </Pane>
+   </children>
+</AnchorPane>
